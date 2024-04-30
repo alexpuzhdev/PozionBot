@@ -17,7 +17,7 @@ user_pos = UserPosition()
 
 class SendProfile:
     def __init__(self):
-        self.position = None
+        self.position = user_pos
         self.avatar = Avatar()
         self.caption = TemplateUser()
 
@@ -31,7 +31,7 @@ class SendProfile:
             'Менеджер': self.send_manager_profile_msg,
             'Байер': self.send_buyer_profile_msg
         }
-        send_profile_func = profile_messages.get(user_position, self.send_unknown_profile_msg)
+        send_profile_func = profile_messages.get(user_position)
         self.position = user_position
         await send_profile_func(message)
 
@@ -52,10 +52,6 @@ class SendProfile:
         photo = await self.avatar.check_avatar_msg(message)
         await message.answer_photo(photo=photo, caption=f'Вы {self.position}')
 
-    async def send_unknown_profile_msg(self, message):
-        photo = await self.avatar.check_avatar_msg(message)
-        await message.answer_photo(photo=photo, caption=f'Вы не зарегистрированы, пожалуйста пройдите регистрацию')
-
     async def send_profile_clb(self, callback):
         """Метод если пользователь отправил колбек"""
 
@@ -66,7 +62,7 @@ class SendProfile:
             'Менеджер': self.send_manager_profile_clb,
             'Байер': self.send_buyer_profile_clb
         }
-        send_profile_func = profile_messages.get(user_position, self.send_unknown_profile_msg)
+        send_profile_func = profile_messages.get(user_position)
         self.position = user_position
         await send_profile_func(callback)
 
@@ -85,10 +81,4 @@ class SendProfile:
     async def send_buyer_profile_clb(self, callback):
         photo = await self.avatar.check_avatar_msg(callback)
         await callback.answer_photo(photo=photo, caption=f'Вы {self.position}')
-
-    async def send_unknown_profile_clb(self, callback):
-        photo = await self.avatar.check_avatar_msg(callback)
-        await callback.answer_photo(photo=photo, caption=f'Вы не зарегистрированы, пожалуйста пройдите регистрацию')
-
-
 

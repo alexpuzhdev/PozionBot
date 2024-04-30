@@ -7,7 +7,7 @@ from aiogram.types import Message
 from dotenv import load_dotenv
 
 from app.profile.service.checks.UserPosition import UserPosition
-from app.profile.service.keyboard_main_menu import keyboards as kb
+from app.profile.service.keyboards import MainMenuKeyboard as kb
 from app.Database.DataBaseManager import DatabaseManager
 from app.profile.service.UserData.UserData import UserData
 

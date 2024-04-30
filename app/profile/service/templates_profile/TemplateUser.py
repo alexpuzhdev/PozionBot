@@ -11,11 +11,12 @@ bot = Bot(os.getenv('TOKEN'))
 
 class TemplateUser:
     def __init__(self):
-        self.user_info = GetUserInfo()
+        self.user_info_service = GetUserInfo()
         self.current_fullname = CheckFullName()
+
     async def get_user_info(self, message):
-        self.user_info = await self.user_info.get_user_info_msg(message)
-        return self.user_info
+        user_info = await self.user_info_service.get_user_info_msg(message)
+        return user_info
 
     async def get_caption(self, message):
         user_info = await self.get_user_info(message)

@@ -17,7 +17,7 @@ class UserPosition:
         user_position = db_manager.get_user_position(user_id)
         return user_position
 
-    async def get_user_position_clb(self, callback):
-        user_id = callback.from_user.id
-        user_position = db_manager.get_user_position(user_id)
-        return user_position
+    # async def get_user_position_clb(self, callback):
+    #     user_id = callback.from_user.id
+    #     user_position = db_manager.get_user_position(user_id)
+    #     return user_position

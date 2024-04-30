@@ -61,6 +61,7 @@ class DatabaseManager:
         query = "SELECT * FROM users WHERE user_id = ?"
         self.cursor.execute(query, (user_id,))
         user_info = self.cursor.fetchone()
+        print(user_info)
         return user_info
 
     def get_user_position(self, user_id):
