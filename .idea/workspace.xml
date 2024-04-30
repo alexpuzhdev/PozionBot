@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e6c8eb4-23b3-4020-81ed-e083ac7b5f23" name="Changes" comment="" />
+    <list default="true" id="0e6c8eb4-23b3-4020-81ed-e083ac7b5f23" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/profile/service/PositionCheck/PositionCheck.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/profile/service/PositionCheck/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/profile/service/UserData/GetUserInfo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/profile/service/UserData/UserData.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/profile/service/UserData/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/profile/service/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/profile/service/keyboard_main_menu/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/profile/MainMenu/MainMenu.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/profile/MainMenu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/profile/MainMenu/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/Database/DataBaseManager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/profile/keyboard_main_menu/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/Database/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/profile/keyboard_main_menu/keyboards.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/profile/service/keyboard_main_menu/keyboards.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,28 +43,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.MainMenu.executor": "Run",
-    "Python.main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Work-at-user-profile",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.MainMenu.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Work-at-user-profile&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/alexander/database_manager.py&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "TEXT"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
+    ],
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;TEXT&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\alexa\PycharmProjects\PozionBot\app\profile" />
+      <recent name="C:\Users\alexa\PycharmProjects\PozionBot\app\profile\Service" />
       <recent name="C:\Users\alexa\PycharmProjects\PozionBot\app" />
     </key>
   </component>
@@ -103,7 +124,9 @@
       <workItem from="1714476273800" duration="92000" />
       <workItem from="1714476372784" duration="313000" />
       <workItem from="1714476780340" duration="1265000" />
-      <workItem from="1714478425900" duration="2413000" />
+      <workItem from="1714478425900" duration="2957000" />
+      <workItem from="1714481946869" duration="2861000" />
+      <workItem from="1714485049233" duration="5920000" />
     </task>
     <servers />
   </component>
@@ -123,6 +146,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PozionBot$MainMenu.coverage" NAME="MainMenu Coverage Results" MODIFIED="1714477435726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/profile/MainMenu" />
-    <SUITE FILE_PATH="coverage/PozionBot$main.coverage" NAME="main Coverage Results" MODIFIED="1714478877039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PozionBot$main.coverage" NAME="main Coverage Results" MODIFIED="1714491250217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

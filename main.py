@@ -8,13 +8,13 @@ from aiogram.fsm.storage.memory import MemoryStorage
 import os
 from dotenv import load_dotenv
 
-from app.profile.MainMenu.MainMenu import MainMenu_router
+from app.Database.DataBaseManager import DatabaseManager
+from app.profile.MainMenu import MainMenu_router
 
 
 load_dotenv()
 bot = Bot(os.getenv('TOKEN'))
 storage = MemoryStorage()
-
 
 """ Создание экземпляра Dispatcher """
 dp = Dispatcher(storage=storage)
@@ -26,6 +26,8 @@ logging.basicConfig(level=logging.INFO)
 
 async def main():
     await bot.delete_webhook(drop_pending_updates=True)
+    db_manager = DatabaseManager('Database.sqlite')
+    db_manager.create_users_table()
     dp.include_routers(
         MainMenu_router,
     )
