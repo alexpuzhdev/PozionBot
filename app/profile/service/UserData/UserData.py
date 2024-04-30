@@ -15,18 +15,20 @@ db_manager = DatabaseManager('Database.sqlite')
 
 
 class GenerateReferralLink:
-    @staticmethod
-    def get_ref():
-        # Генерируем 10 случайных цифр
+
+    def __init__(self):
+        pass
+
+    def get_ref(self):
+        """ Генерируем 10 случайных цифр """
         random_digits = ''.join(random.choices(string.digits, k=10))
-        # Составляем реферальную ссылку
+        """ Составляем реферальную ссылку """
         referral_link = f'https://t.me/NepalStore?start=#ref{random_digits}'
         return referral_link
 
 
 class UserData:
-    @staticmethod
-    async def user_data_message(message):
+    async def user_data_message(self, message):
         user_id = message.from_user.id
         first_name_tg = message.from_user.first_name
         last_name_tg = message.from_user.last_name
@@ -41,9 +43,10 @@ class UserData:
         phone_number = 'Не указан'
         active_delivery = False
         pers_loyalty = '0 %'
-        pers_referal_link = GenerateReferralLink.get_ref()
+        referral_link_generator = GenerateReferralLink()
+        pers_referal_link = referral_link_generator.get_ref()
         from_referal_link = None
-#16
+
         return {
             'user_id': user_id,
             'first_name_tg': first_name_tg,
@@ -62,8 +65,5 @@ class UserData:
             'pers_referal_link': pers_referal_link,
             'from_referal_link': from_referal_link,
         }
-#16
-
-
 
 

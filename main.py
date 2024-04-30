@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 
 from app.Database.DataBaseManager import DatabaseManager
 from app.profile.MainMenu import MainMenu_router
-
+from app.profile.user.profile import UserProfile_router
 
 load_dotenv()
 bot = Bot(os.getenv('TOKEN'))
@@ -29,7 +29,7 @@ async def main():
     db_manager = DatabaseManager('Database.sqlite')
     db_manager.create_users_table()
     dp.include_routers(
-        MainMenu_router,
+        MainMenu_router, UserProfile_router
     )
     await dp.start_polling(bot)
 

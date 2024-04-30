@@ -69,3 +69,9 @@ class DatabaseManager:
         user_position = self.cursor.fetchone()
         for position in user_position:
             return position
+
+    def get_fullname(self, user_id):
+        query = "SELECT firstname, surname, lastname FROM users WHERE user_id = ?"
+        self.cursor.execute(query, (user_id,))
+        fullname = self.cursor.fetchone()
+        return fullname

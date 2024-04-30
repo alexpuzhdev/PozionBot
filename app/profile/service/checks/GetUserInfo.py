@@ -14,20 +14,30 @@ db_manager = DatabaseManager('Database.sqlite')
 
 
 class GetUserInfo:
-    @staticmethod
-    async def get_user_info_msg(message):
+
+    async def get_user_info_msg(self, message):
         user_id = message.from_user.id
         user_info = db_manager.get_actual_info_for_user(user_id)
         return user_info
 
-    @staticmethod
-    async def get_user_info_clb(callback):
+    async def get_user_info_clb(self, callback):
         user_id = callback.from_user.id
         user_info = db_manager.get_actual_info_for_user(user_id)
         return user_info
 
-    @staticmethod
-    async def get_user_position_msg(message):
+    async def get_user_position_msg(self, message):
         user_id = message.from_user.id
+        user_position = db_manager.get_user_position(user_id)
+        return user_position
+
+    async def get_user_position_clb(self, callback):
+        user_id = callback.from_user.id
         user_info = db_manager.get_user_position(user_id)
         return user_info
+
+    async def get_fullname_msg(self, message):
+        user_id = message.from_user.id
+        fullname = db_manager.get_fullname(user_id)
+        print(fullname)
+        return fullname
+
