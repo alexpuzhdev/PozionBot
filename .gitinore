@@ -1,0 +1,19 @@
+# IntelliJ IDEA
+.idea/
+
+# Кэш PyCharm
+*.iml
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Кэш для VS Code
+.vscode/
+
+# Кэш Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Кэш Jupyter Notebook
+.ipynb_checkpoints/
