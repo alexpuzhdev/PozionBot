@@ -1,6 +1,7 @@
 # IntelliJ IDEA
 .idea/
-
+.idea
+workspace.xml
 # Кэш PyCharm
 *.iml
 *.pyc

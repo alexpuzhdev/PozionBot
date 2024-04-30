@@ -5,7 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e6c8eb4-23b3-4020-81ed-e083ac7b5f23" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/profile/service/checks/CheckFullName.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/profile/service/checks/UserPosition.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/profile/service/checks/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/profile/service/templates_profile/TemplateUser.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/profile/service/templates_profile/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/profile/user/profile.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Database/DataBaseManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/Database/DataBaseManager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/profile/MainMenu.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/profile/MainMenu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/profile/service/PositionCheck/PositionCheck.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/profile/service/SendProfile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/profile/service/PositionCheck/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/profile/service/checks/Avatar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/profile/service/UserData/GetUserInfo.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/profile/service/checks/GetUserInfo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/profile/service/UserData/UserData.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/profile/service/UserData/UserData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +33,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -36,7 +54,7 @@
     "Python.MainMenu.executor": "Run",
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Database",
+    "git-widget-placeholder": "work-at-profile",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/alexander/database_manager.py",
     "node.js.detected.package.eslint": "true",
@@ -58,6 +76,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\alexa\PycharmProjects\PozionBot\app\profile\service\checks" />
       <recent name="C:\Users\alexa\PycharmProjects\PozionBot\app\profile" />
       <recent name="C:\Users\alexa\PycharmProjects\PozionBot\app\profile\Service" />
       <recent name="C:\Users\alexa\PycharmProjects\PozionBot\app" />
@@ -89,6 +108,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
@@ -134,6 +154,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PozionBot$MainMenu.coverage" NAME="MainMenu Coverage Results" MODIFIED="1714477435726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/profile/MainMenu" />
-    <SUITE FILE_PATH="coverage/PozionBot$main.coverage" NAME="main Coverage Results" MODIFIED="1714491385793" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PozionBot$main.coverage" NAME="main Coverage Results" MODIFIED="1714513292089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
