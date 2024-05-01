@@ -9,6 +9,7 @@ workspace.xml
 *.pyo
 *.pyd
 __pycache__/
+DataBase.sqlite
 
 # Кэш для VS Code
 .vscode/
