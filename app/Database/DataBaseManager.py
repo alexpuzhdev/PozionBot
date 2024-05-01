@@ -39,6 +39,48 @@ class DatabaseManager:
         self.cursor.execute(create_table_query)
         self.conn.commit()
 
+    def create_manager_table(self):
+        create_table_query = '''
+         CREATE TABLE IF NOT EXISTS manager (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                user_id VARCHAR(255),   
+                firstname VARCHAR(255),
+                lastname VARCHAR(255),
+                username VARCHAR(255),
+                ticket_count INTEGER,
+                open_ticket_count INTEGER
+            )
+       '''
+        self.cursor.execute(create_table_query)
+        self.conn.commit()
+
+    def get_info_for_manager(self, user_id):
+        query = "SELECT * FROM manager WHERE user_id = ?"
+        self.cursor.execute(query, (user_id,))
+        manager_info = self.cursor.fetchone()
+        return manager_info
+
+    def create_admin_table(self):
+        create_table_query = '''
+         CREATE TABLE IF NOT EXISTS admin_table (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                user_id VARCHAR(255),   
+                firstname VARCHAR(255),
+                lastname VARCHAR(255),
+                username VARCHAR(255),
+                count_users INTEGER,
+                count_pers INTEGER
+            )
+       '''
+        self.cursor.execute(create_table_query)
+        self.conn.commit()
+
+    def get_info_for_admin(self, user_id):
+        query = "SELECT * FROM admin_table WHERE user_id = ?"
+        self.cursor.execute(query, (user_id,))
+        admin_info = self.cursor.fetchone()
+        return admin_info
+
     def insert_into_users_table(self, user_data):
         """ Проверяем, существует ли запись с данным user_id """
         user_id = user_data['user_id']
@@ -75,3 +117,5 @@ class DatabaseManager:
         self.cursor.execute(query, (user_id,))
         fullname = self.cursor.fetchone()
         return fullname
+
+

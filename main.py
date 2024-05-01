@@ -28,6 +28,8 @@ async def main():
     await bot.delete_webhook(drop_pending_updates=True)
     db_manager = DatabaseManager('Database.sqlite')
     db_manager.create_users_table()
+    db_manager.create_manager_table()
+    db_manager.create_admin_table()
     dp.include_routers(
         MainMenu_router, UserProfile_router
     )
