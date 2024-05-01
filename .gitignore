@@ -2,12 +2,14 @@
 .idea/
 .idea
 workspace.xml
+.idea/workspace.xml
 # Кэш PyCharm
 *.iml
 *.pyc
 *.pyo
 *.pyd
 __pycache__/
+DataBase.sqlite
 
 # Кэш для VS Code
 .vscode/

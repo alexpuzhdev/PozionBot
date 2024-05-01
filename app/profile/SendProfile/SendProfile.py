@@ -7,6 +7,7 @@ from app.profile.service.checks.Avatar import Avatar
 from app.profile.service.templates_profile.TemplateAdmin import TemplateAdmin
 from app.profile.service.templates_profile.TemplateManager import TemplateManager
 from app.profile.service.templates_profile.TemplateUser import TemplateUser
+from app.profile.user.keyboards import ProfileKeyboards as kb_user
 
 load_dotenv()
 bot = Bot(os.getenv('TOKEN'))
@@ -22,6 +23,7 @@ class SendProfile:
         self.caption_user = TemplateUser()
         self.caption_manager = TemplateManager()
         self.caption_admin = TemplateAdmin()
+        self.kb_user = kb_user.profile_user
 
     async def send_profile_msg(self, message):
         """Метод если пользователь отправил сообщение"""
@@ -40,7 +42,7 @@ class SendProfile:
     async def send_user_profile_msg(self, message):
         photo = await self.avatar.check_avatar_msg(message)
         caption = await self.caption_user.get_caption(message)
-        await message.answer_photo(photo=photo, caption=f'{caption}', parse_mode='HTML')
+        await message.answer_photo(photo=photo, caption=f'{caption}', parse_mode='HTML', reply_markup=self.kb_user)
 
     async def send_manager_profile_msg(self, message):
         photo = await self.avatar.check_avatar_msg(message)
