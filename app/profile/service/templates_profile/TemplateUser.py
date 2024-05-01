@@ -3,7 +3,7 @@ from aiogram import Bot
 from dotenv import load_dotenv
 
 from app.profile.service.checks.CheckFullName import CheckFullName
-from app.profile.service.checks.GetUserInfo import GetUserInfo
+from app.profile.service.get_info.GetUserInfo import GetUserInfo
 
 load_dotenv()
 bot = Bot(os.getenv('TOKEN'))
@@ -13,9 +13,10 @@ class TemplateUser:
     def __init__(self):
         self.user_info = GetUserInfo()
         self.current_fullname = CheckFullName()
+
     async def get_user_info(self, message):
-        self.user_info = await self.user_info.get_user_info_msg(message)
-        return self.user_info
+        user_info_data = await self.user_info.get_user_info_msg(message)
+        return user_info_data
 
     async def get_caption(self, message):
         user_info = await self.get_user_info(message)

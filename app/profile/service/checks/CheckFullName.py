@@ -1,7 +1,7 @@
 import os
 from aiogram import Bot
 from dotenv import load_dotenv
-from app.profile.service.checks.GetUserInfo import GetUserInfo
+from app.profile.service.get_info.GetUserInfo import GetUserInfo
 
 load_dotenv()
 bot = Bot(os.getenv('TOKEN'))

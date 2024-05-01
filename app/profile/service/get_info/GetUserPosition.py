@@ -10,7 +10,7 @@ bot = Bot(os.getenv('TOKEN'))
 db_manager = DatabaseManager('Database.sqlite')
 
 
-class UserPosition:
+class GetUserPosition:
 
     async def get_user_position_msg(self, message):
         user_id = message.from_user.id

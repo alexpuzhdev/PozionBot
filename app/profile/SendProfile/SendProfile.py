@@ -1,25 +1,27 @@
-from aiogram import Router, F, Bot, Dispatcher
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from aiogram.utils.keyboard import InlineKeyboardBuilder
+from aiogram import Bot
 from dotenv import load_dotenv
 import os
 from app.Database.DataBaseManager import DatabaseManager
-from app.profile.service.checks.UserPosition import UserPosition
+from app.profile.service.get_info.GetUserPosition import GetUserPosition
 from app.profile.service.checks.Avatar import Avatar
+from app.profile.service.templates_profile.TemplateAdmin import TemplateAdmin
+from app.profile.service.templates_profile.TemplateManager import TemplateManager
 from app.profile.service.templates_profile.TemplateUser import TemplateUser
 
 load_dotenv()
 bot = Bot(os.getenv('TOKEN'))
 db_manager = DatabaseManager('Database.sqlite')
 
-user_pos = UserPosition()
+user_pos = GetUserPosition()
 
 
 class SendProfile:
     def __init__(self):
         self.position = None
         self.avatar = Avatar()
-        self.caption = TemplateUser()
+        self.caption_user = TemplateUser()
+        self.caption_manager = TemplateManager()
+        self.caption_admin = TemplateAdmin()
 
     async def send_profile_msg(self, message):
         """Метод если пользователь отправил сообщение"""
@@ -37,16 +39,18 @@ class SendProfile:
 
     async def send_user_profile_msg(self, message):
         photo = await self.avatar.check_avatar_msg(message)
-        caption = await self.caption.get_caption(message)
+        caption = await self.caption_user.get_caption(message)
+        await message.answer_photo(photo=photo, caption=f'{caption}', parse_mode='HTML')
+
+    async def send_manager_profile_msg(self, message):
+        photo = await self.avatar.check_avatar_msg(message)
+        caption = await self.caption_manager.get_caption(message)
         await message.answer_photo(photo=photo, caption=f'{caption}', parse_mode='HTML')
 
     async def send_admin_profile_msg(self, message):
         photo = await self.avatar.check_avatar_msg(message)
-        await message.answer_photo(photo=photo, caption=f'Вы {self.position}')
-
-    async def send_manager_profile_msg(self, message):
-        photo = await self.avatar.check_avatar_msg(message)
-        await message.answer_photo(photo=photo, caption=f'Вы {self.position}')
+        caption = await self.caption_admin.get_caption(message)
+        await message.answer_photo(photo=photo, caption=f'{caption}', parse_mode='HTML')
 
     async def send_buyer_profile_msg(self, message):
         photo = await self.avatar.check_avatar_msg(message)
