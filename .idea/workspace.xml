@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e6c8eb4-23b3-4020-81ed-e083ac7b5f23" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/profile/user/keyboards/ProfileKeyboards.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/profile/user/keyboards/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/profile/admin/keyboards/ProfileKeyboards.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/profile/admin/keyboards/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/profile/SendProfile/SendProfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/profile/SendProfile/SendProfile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/profile/service/keyboard_main_menu/keyboards.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/profile/service/keyboard_main_menu/keyboards.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +44,7 @@
     "Python.MainMenu.executor": "Run",
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "keyboard-for-user-profile",
+    "git-widget-placeholder": "keyaborad-for-admin",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/alexander/database_manager.py",
     "node.js.detected.package.eslint": "true",
@@ -146,6 +145,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PozionBot$MainMenu.coverage" NAME="MainMenu Coverage Results" MODIFIED="1714477435726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/profile/MainMenu" />
-    <SUITE FILE_PATH="coverage/PozionBot$main.coverage" NAME="main Coverage Results" MODIFIED="1714581584867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PozionBot$main.coverage" NAME="main Coverage Results" MODIFIED="1714582443896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
