@@ -30,6 +30,18 @@ class DeleteMessage:
         except Exception as e:
             print(f"Ошибка при удалении сообщения {message_id}: {e}")
 
+    @staticmethod
+    async def delete_all_msg(message):
+        try:
+            await DeleteMessage.delete_user_msg(message)
+        except Exception as e:
+            print(f"Ошибка при удалении сообщения: {e}")
+        try:
+            await DeleteMessage.delete_bot_msg(message)
+        except Exception as e:
+            print(f"Ошибка при удалении коллбека: {e}")
+
+
 
 class DeleteCallback:
     @staticmethod

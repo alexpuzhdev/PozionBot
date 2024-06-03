@@ -10,7 +10,8 @@ from dotenv import load_dotenv
 
 from app.Database.DataBaseManager import DatabaseManager
 from app.profile.MainMenu import MainMenu_router
-from app.profile.user.edit_profile import EditUserProfile_router
+from app.profile.user.callbacks.edit_city import EditCity_router
+from app.profile.user.callbacks.edit_fio import EditUserProfile_router
 from app.profile.user.profile import UserProfile_router
 
 load_dotenv()
@@ -33,7 +34,7 @@ async def main():
     db_manager.create_admin_table()
     dp.include_routers(
         MainMenu_router, UserProfile_router,
-        EditUserProfile_router
+        EditUserProfile_router, EditCity_router
     )
     await dp.start_polling(bot)
 

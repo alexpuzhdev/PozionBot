@@ -118,4 +118,51 @@ class DatabaseManager:
         fullname = self.cursor.fetchone()
         return fullname
 
+    def get_firstname(self, user_id):
+        query = "SELECT firstname FROM users WHERE user_id = ?"
+        self.cursor.execute(query, (user_id,))
+        firstname = self.cursor.fetchone()
+        return firstname[0]
+
+    def get_surname(self, user_id):
+        query = "SELECT surname FROM users WHERE user_id = ?"
+        self.cursor.execute(query, (user_id,))
+        surname = self.cursor.fetchone()
+        return surname[0]
+
+    def get_lastname(self, user_id):
+        query = "SELECT lastname FROM users WHERE user_id = ?"
+        self.cursor.execute(query, (user_id,))
+        lastname = self.cursor.fetchone()
+        return lastname[0]
+
+    def insert_fio(self, data):
+        print(f"{data['firstname']} {data['lastname']} {data['thirdname']}, {data['user_id']}")
+        query = '''
+            UPDATE users
+            SET firstname = ?, surname = ?, lastname = ?
+            WHERE user_id = ?
+        '''
+        values = (data['firstname'], data['lastname'], data['thirdname'], data['user_id'])
+        try:
+            self.cursor.execute(query, values)
+            self.conn.commit()
+        except Exception as e:
+            print(f"Не удалось обновить данные, ошибка:\n {e}")
+
+    def insert_city(self, data):
+        print(f"{data['city']},{data['user_id']}")
+        query = '''
+            UPDATE users
+            SET city = ?
+            WHERE user_id = ?
+        '''
+        values = (data['city'], data['user_id'])
+        try:
+            self.cursor.execute(query, values)
+            self.conn.commit()
+        except Exception as e:
+            print(f"Не удалось обновить данные, ошибка:\n {e}")
+
+
 

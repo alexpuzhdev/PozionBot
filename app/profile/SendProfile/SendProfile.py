@@ -1,7 +1,10 @@
 from aiogram import Bot
+from aiogram.types import Message, CallbackQuery
+
 from dotenv import load_dotenv
 import os
 from app.Database.DataBaseManager import DatabaseManager
+from app.profile.service.DateMessage.DateMessage import DateMessage
 from app.profile.service.get_info.GetUserPosition import GetUserPosition
 from app.profile.service.checks.Avatar import Avatar
 from app.profile.service.templates_profile.TemplateAdmin import TemplateAdmin
@@ -44,27 +47,47 @@ class SendProfile:
         await send_profile_func(message)
 
     async def send_user_profile_msg(self, message):
+        date_msg = DateMessage(message)
+        await bot.delete_message(chat_id=message.from_user.id, message_id=message.message_id)
         photo = await self.avatar.check_avatar_msg(message)
         caption = await self.caption_user.get_caption(message)
-        await message.answer_photo(photo=photo, caption=f'{caption}', parse_mode='HTML', reply_markup=self.kb_user)
+        sent_message = (await message.answer_photo(photo=photo, caption=f'{caption}', parse_mode='HTML',
+                                                   reply_markup=self.kb_user)).message_id
+        await date_msg.append_message(sent_message)
 
     async def send_manager_profile_msg(self, message):
+        date_msg = DateMessage(message)
+        await bot.delete_message(chat_id=message.from_user.id, message_id=message.message_id)
         photo = await self.avatar.check_avatar_msg(message)
         caption = await self.caption_manager.get_caption(message)
-        await message.answer_photo(photo=photo, caption=f'{caption}', parse_mode='HTML', reply_markup=self.kb_manager)
+        sent_message = (await message.answer_photo(photo=photo, caption=f'{caption}', parse_mode='HTML',
+                                                   reply_markup=self.kb_manager)).message_id
+        await date_msg.append_message(sent_message)
 
     async def send_admin_profile_msg(self, message):
+        date_msg = DateMessage(message)
+        await bot.delete_message(chat_id=message.from_user.id, message_id=message.message_id)
         photo = await self.avatar.check_avatar_msg(message)
         caption = await self.caption_admin.get_caption(message)
-        await message.answer_photo(photo=photo, caption=f'{caption}', parse_mode='HTML', reply_markup=self.kb_admin)
+        sent_message = (await message.answer_photo(photo=photo, caption=f'{caption}', parse_mode='HTML',
+                                                   reply_markup=self.kb_admin)).message_id
+        await date_msg.append_message(sent_message)
 
     async def send_buyer_profile_msg(self, message):
+        date_msg = DateMessage(message)
+        await bot.delete_message(chat_id=message.from_user.id, message_id=message.message_id)
         photo = await self.avatar.check_avatar_msg(message)
-        await message.answer_photo(photo=photo, caption=f'Вы {self.position}')
+        sent_message = (await message.answer_photo(photo=photo, caption=f'Вы {self.position}')).message_id
+        await date_msg.append_message(sent_message)
 
     async def send_unknown_profile_msg(self, message):
+        date_msg = DateMessage(message)
+        await bot.delete_message(chat_id=message.from_user.id, message_id=message.message_id)
         photo = await self.avatar.check_avatar_msg(message)
-        await message.answer_photo(photo=photo, caption=f'Вы не зарегистрированы, пожалуйста пройдите регистрацию')
+        sent_message = (await message.answer_photo(photo=photo,
+                                                   caption=f'Вы не зарегистрированы, пожалуйста пройдите регистрацию'
+                                                   )).message_id
+        await date_msg.append_message(sent_message)
 
     async def send_profile_clb(self, callback):
         """Метод если пользователь отправил колбек"""
@@ -76,29 +99,28 @@ class SendProfile:
             'Менеджер': self.send_manager_profile_clb,
             'Байер': self.send_buyer_profile_clb
         }
-        send_profile_func = profile_messages.get(user_position, self.send_unknown_profile_msg)
+        send_profile_func_clb = profile_messages.get(user_position, self.send_unknown_profile_msg)
         self.position = user_position
-        await send_profile_func(callback)
+        await send_profile_func_clb(callback)
 
     async def send_user_profile_clb(self, callback):
-        photo = await self.avatar.check_avatar_msg(callback)
-        await callback.answer_photo(photo=photo, caption=f'Вы {self.position}')
+        photo = await self.avatar.check_avatar_clb(callback)
+        caption = await self.caption_user.get_caption(callback)
+        await callback.message.answer_photo(photo=photo, caption=f'{caption}', parse_mode='HTML',
+                                            reply_markup=self.kb_user)
 
     async def send_admin_profile_clb(self, callback):
-        photo = await self.avatar.check_avatar_msg(callback)
+        photo = await self.avatar.check_avatar_clb(callback)
         await callback.answer_photo(photo=photo, caption=f'Вы {self.position}')
 
     async def send_manager_profile_clb(self, callback):
-        photo = await self.avatar.check_avatar_msg(callback)
+        photo = await self.avatar.check_avatar_clb(callback)
         await callback.answer_photo(photo=photo, caption=f'Вы {self.position}')
 
     async def send_buyer_profile_clb(self, callback):
-        photo = await self.avatar.check_avatar_msg(callback)
+        photo = await self.avatar.check_avatar_clb(callback)
         await callback.answer_photo(photo=photo, caption=f'Вы {self.position}')
 
     async def send_unknown_profile_clb(self, callback):
-        photo = await self.avatar.check_avatar_msg(callback)
+        photo = await self.avatar.check_avatar_clb(callback)
         await callback.answer_photo(photo=photo, caption=f'Вы не зарегистрированы, пожалуйста пройдите регистрацию')
-
-
-
